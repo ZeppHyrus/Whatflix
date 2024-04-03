@@ -92,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (dbHelper.isValidUser(username, password)) {
             // Login successful
-            String userRole = dbHelper.getUserRole(username); // Obtener el rol del usuario
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            intent.putExtra("USER_ROLE", userRole); // Pasar el rol del usuario a HomeActivity
             startActivity(intent);
             finish(); // Finalizar MainActivity para evitar que el usuario vuelva atrás con el botón de retroceso
         } else {
